@@ -1,0 +1,178 @@
+/* Estilos del header */
+header {
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 200px;
+    transition: 0.5s ease;
+}
+
+/* Estilos del logo */
+header .brand {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Estilo de la navegacion */
+header .navigation {
+    position: relative;
+}
+
+header .navigation .navigation-items a {
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:before {
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:hover:before {
+    width: 100%;
+}
+
+/* Estilos del boton menú */
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    z-index: 777;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.menu-btn .hamburger {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: 0.3s ease;
+}
+
+.menu-btn .hamburger::before,
+.menu-btn .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    transition: 0.3s ease;
+}
+
+.menu-btn .hamburger::before {
+    top: -8px;
+}
+
+.menu-btn .hamburger::after {
+    bottom: -8px;
+}
+
+/* Cuando el menú está activo, transformar en X */
+.menu-btn.active .hamburger {
+    background: transparent;
+}
+
+.menu-btn.active .hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.menu-btn.active .hamburger::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+/* Media queries (responsive) */
+@media (max-width: 1040px) {
+    header {
+        padding: 12px 20px;
+    }
+
+    header .navigation {
+        display: none;
+    }
+
+    header .navigation.active {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(1, 1, 1, 0.5);
+    }
+
+    header .navigation .navigation-items a {
+        color: #222;
+        font-size: 1.2em;
+        margin: 20px;
+    }
+
+    header .navigation .navigation-items a:before {
+        background: #222;
+        height: 5px;
+    }
+
+    header .navigation.active .navigation-items {
+        background: #fff;
+        width: 600px;
+        max-width: 600px;
+        margin: 20px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 5px;
+        box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+    }
+
+    .menu-btn {
+        color: #fff;
+        font-size: 30px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        z-index: 777;
+        display: block;
+    }
+
+    .menu-btn.active {
+        color: #fff;
+        z-index: 999;
+        font-size: 30px;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+}
+
