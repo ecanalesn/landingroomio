@@ -97,7 +97,6 @@ const BookingForm = ({ formData, setFormData }) => {
       method="POST"
       data-netlify="true"
       netlify-honeypot="bot-field"
-      action="/gracias"
     >
       <input type="hidden" name="form-name" value="roomio-reservas" />
       <p hidden>
