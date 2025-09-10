@@ -98,12 +98,13 @@ const BookingForm = ({ formData, setFormData }) => {
       data-netlify="true"
       netlify-honeypot="bot-field"
     >
-      <input type="hidden" name="form-name" value="roomio-reservas" />
-      <p hidden>
-        <label>
-          No llenar: <input name="bot-field" onChange={() => {}} />
-        </label>
-      </p>
+  	<input type="hidden" name="form-name" value="roomio-reservas" />
+  	<input type="hidden" name="redirect" value="/" />
+  	<p hidden>
+  	  <label>
+  		No llenar: <input name="bot-field" onChange={() => {}} />
+  	  </label>
+  	</p>
 
       <fieldset>
         <legend>Tipo de Alojamiento</legend>
